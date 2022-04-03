@@ -1,0 +1,19 @@
+{
+  "name": "algo-practice",
+  "version": "1.0.0",
+  "description": "data structures and algo practice file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knaso17/Algo-Practice.git"
+  },
+  "author": "Krista Naso",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knaso17/Algo-Practice/issues"
+  },
+  "homepage": "https://github.com/knaso17/Algo-Practice#readme"
+}
