@@ -21,8 +21,8 @@ describe("Pair Sum Function Suite", () => {
     let expected4 = [10, 70];
 
     expect(pairSum([1, 2, 3, 8, 4], 6)).toEqual(expect.arrayContaining(expected1));
-    expect(pairSum([5, 10, 20, 30, 35], 40)).toEqual(expect.arrayContaining(expected2));
+    expect(pairSum([5, 12, 20, 30, 35], 40)).toEqual(expect.arrayContaining(expected2));
     expect(pairSum([8, 10, 6, 4, -4], 4)).toEqual(expect.arrayContaining(expected3));
-    expect(pairSum([10, 3, 9, 60, 70, 71], 80)).toEqual(expect.arrayContaining(expected4));
+    expect(pairSum([10, 3, 9, 60, 70, 22], 80)).toEqual(expect.arrayContaining(expected4));
   });
 });
