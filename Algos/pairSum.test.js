@@ -13,10 +13,10 @@ describe("Pair Sum Function Suite", () => {
     expect(pairSum([5, 11, -1], 10)).toStrictEqual([11, -1]);
   });
 
-  test('assorted test cases with target sum avaliable', () => {
-    expect(pairSum([5, 11, -1], 10)).toStrictEqual([11, -1]);
-    expect(pairSum([5, 11, -1], 10)).toStrictEqual([11, -1]);
-    expect(pairSum([5, 11, -1], 10)).toStrictEqual([11, -1]);
-    expect(pairSum([5, 11, -1], 10)).toStrictEqual([11, -1]);
+  test('assorted test cases with target sum available', () => {
+    expect(pairSum([1, 2, 3, 8, 4], 6)).toStrictEqual([2, 4]);
+    expect(pairSum([5, 10, 20, 30, 35], 40)).toStrictEqual([5, 35]);
+    expect(pairSum([8, 10, 6, 4, -4], 4)).toStrictEqual([8, -4]);
+    expect(pairSum([10, 3, 2, 9, 60, 70], 80)).toStrictEqual([10, 70]);
   });
 });
