@@ -1,11 +1,11 @@
-export class Node{
+class Node{
   constructor(val){
     this.val = val;
     this.next = null;
   }
 }
 
-export class SinglyLinkedList{
+class SinglyLinkedList{
   constructor(){
     this.length = 0;
     this.head = null;
@@ -90,3 +90,4 @@ export class SinglyLinkedList{
 
 }
 
+module.exports = {Node, SinglyLinkedList}

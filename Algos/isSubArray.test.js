@@ -1,6 +1,6 @@
 const isSubArray = require('./isSubArray');
 
-describe("Is Sub Array Function Suite", () => {
+describe.skip("Is Sub Array Function Suite", () => {
 
   test('isSubArray returns a boolean', () => {
     expect(typeof isSubArray([1], [1])).toBe("boolean");
