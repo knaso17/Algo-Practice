@@ -95,6 +95,31 @@ describe("Singly Linked List", () => {
     });
 
   });
+
+  describe("Shift Method", () => {
+    /* What we want to test for Shift:
+      returns undefined if list is empty
+      removes first element
+      if removing only value, sets head and tail to null
+      if many values only the first one removed
+       */
+
+    test("Shift is a valid method", () => {
+      expect(typeof list.shift).toBe("function");
+    });
+
+    test("Shift returns undefined if the list is empty", () => {
+      expect(list.shift()).toBe(undefined);
+    });
+
+    test("If popping off the only element, head and tail are null", () => {
+      list.push("Shift Me!")
+      expect(list.pop().val).toBe("Shift Me!");
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.length).toBe(0);
+    });
+  })
 });
 
 
