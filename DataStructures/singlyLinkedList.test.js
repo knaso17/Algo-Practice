@@ -51,7 +51,7 @@ describe("Singly Linked List", () => {
       list.push("Hello");
       list.push("Goodbye");
       list.push(99);
-      list.push("last value")
+      list.push("last value");
 
       expect(list.head.val).toBe("Hello");
       expect(list.head.next.val).toBe("Goodbye");
@@ -189,9 +189,30 @@ describe("Singly Linked List", () => {
     test("Get is a valid method", () => {
       expect(typeof list.get).toBe("function");
     });
+
+    test("Get returns null if the index provided is not valid", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.get(5)).toBe(null);
+      expect(list.get(-2)).toBe(null);
+    });
+
+    test("Get returns the node for the index provided", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.get(0).val).toBe('Hello');
+      expect(list.get(2).val).toBe(99);
+      expect(list.get(3).val).toBe("last value");
+    });
   });
 
-  //Todo: GET and SET
+  //Todo: SET
 });
 
 
