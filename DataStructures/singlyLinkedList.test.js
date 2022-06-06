@@ -63,6 +63,19 @@ describe("Singly Linked List", () => {
     })
 
   });
+
+  describe("Pop Method", () => {
+    /* What we want to test for pop:
+      returns undefined if list is empty
+      removes last element
+      if removing only value, sets head and tail to null
+      if many values only the last one removed
+       */
+
+      test("Pop is a valid method", () => {
+      expect(typeof list.pop).toBe("function");
+    });
+  });
 });
 
 
