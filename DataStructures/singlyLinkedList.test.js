@@ -14,7 +14,8 @@ describe("Singly Linked List", () => {
       the value is added to the list
 
       first value should be both head and tail (next value is null)
-      subsequent values should be added to the tail and last value of head */
+      subsequent values should be added to the tail and last value of head
+    */
 
     test("Push is a valid method", () => {
       expect(typeof list.push).toBe("function");
@@ -66,7 +67,7 @@ describe("Singly Linked List", () => {
       removes last element
       if removing only value, sets head and tail to null
       if many values only the last one removed
-       */
+    */
 
     test("Pop is a valid method", () => {
       expect(typeof list.pop).toBe("function");
@@ -102,7 +103,7 @@ describe("Singly Linked List", () => {
       removes first element
       if removing only value, sets head and tail to null
       if many values only the first one removed
-       */
+    */
 
     test("Shift is a valid method", () => {
       expect(typeof list.shift).toBe("function");
@@ -137,13 +138,49 @@ describe("Singly Linked List", () => {
       the value is added to the list
 
       first value should be both head and tail (next value is null)
-      subsequent values should be added to the tail and last value of head */
+      subsequent values should be added to the head
+    */
 
-      test("Unshift is a valid method", () => {
+    test("Unshift is a valid method", () => {
       expect(typeof list.unshift).toBe("function");
+    });
+
+    test("Unshift adds first value to head and tail", () => {
+      list.unshift("testValue");
+      expect(list.head.val).toBe("testValue");
+      expect(list.tail.val).toBe("testValue");
+      expect(list.length).toBe(1);
+    });
+
+    test("Unshift adds additional values to head", () => {
+      list.push("Second");
+      list.unshift("First");
+      expect(list.head.val).toBe("First");
+      expect(list.tail.val).toBe("Second");
+      expect(list.length).toBe(2);
+    });
+
+    test("Unshift adds additional values in next", () => {
+      list.unshift("Second");
+      list.unshift("First");
+      expect(list.head.val).toBe("First");
+      expect(list.head.next.val).toBe("Second");
+    });
+
+    test("Unshift works for many values", () => {
+      list.unshift("last value");
+      list.unshift(99);
+      list.unshift("Goodbye");
+      list.unshift("Hello");
+
+      expect(list.head.val).toBe("Hello");
+      expect(list.head.next.val).toBe("Goodbye");
+      expect(list.tail.val).toBe("last value");
+      expect(list.length).toBe(4);
     });
   });
 
+  //Todo: GET and SET
 });
 
 
