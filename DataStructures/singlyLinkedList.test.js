@@ -129,9 +129,21 @@ describe("Singly Linked List", () => {
       expect(list.tail.val).toBe("Goodbye");
       expect(list.length).toBe(2);
     });
+  });
 
+  describe("Unshift Method", () => {
+    /* What we want to test for push:
+      length goes up by one
+      the value is added to the list
 
-  })
+      first value should be both head and tail (next value is null)
+      subsequent values should be added to the tail and last value of head */
+
+      test("Unshift is a valid method", () => {
+      expect(typeof list.unshift).toBe("function");
+    });
+  });
+
 });
 
 
