@@ -112,13 +112,25 @@ describe("Singly Linked List", () => {
       expect(list.shift()).toBe(undefined);
     });
 
-    test("If popping off the only element, head and tail are null", () => {
+    test("If shifting the only element, head and tail are null", () => {
       list.push("Shift Me!")
-      expect(list.pop().val).toBe("Shift Me!");
+      expect(list.shift().val).toBe("Shift Me!");
       expect(list.head).toBe(null);
       expect(list.tail).toBe(null);
       expect(list.length).toBe(0);
     });
+
+    test("Shift works for longer lists", () => {
+      list.push("Shift Me!")
+      list.push("Hello")
+      list.push("Goodbye")
+      expect(list.shift().val).toBe("Shift Me!");
+      expect(list.head.val).toBe("Hello");
+      expect(list.tail.val).toBe("Goodbye");
+      expect(list.length).toBe(2);
+    });
+
+
   })
 });
 
