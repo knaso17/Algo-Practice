@@ -180,6 +180,17 @@ describe("Singly Linked List", () => {
     });
   });
 
+  describe("Get Method", () => {
+    /* What we want to test for get:
+      get value at passed in index
+      if index provided is not valid, returns null
+    */
+
+    test("Get is a valid method", () => {
+      expect(typeof list.get).toBe("function");
+    });
+  });
+
   //Todo: GET and SET
 });
 
