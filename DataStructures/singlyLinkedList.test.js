@@ -23,33 +23,28 @@ describe("Singly Linked List", () => {
     test("Push adds one to the length", () => {
       list.push("testValue");
       expect(list.length).toBe(1);
-    })
+    });
 
     test("Push adds first value to head and tail", () => {
       list.push("testValue");
       expect(list.head.val).toBe("testValue");
       expect(list.tail.val).toBe("testValue");
-    })
-
-    test("Push adds one to the length each time", () => {
-      list.push("testValue1");
-      list.push("testValue2");
-      expect(list.length).toBe(2);
-    })
+    });
 
     test("Push adds additional values to tail", () => {
       list.push("First");
       list.push("Second");
       expect(list.head.val).toBe("First");
       expect(list.tail.val).toBe("Second");
-    })
+      expect(list.length).toBe(2);
+    });
 
     test("Push adds additional values in next", () => {
       list.push("First");
       list.push("Second");
       expect(list.head.val).toBe("First");
       expect(list.head.next.val).toBe("Second");
-    })
+    });
 
     test("Push works for many values", () => {
       list.push("Hello");
@@ -60,7 +55,8 @@ describe("Singly Linked List", () => {
       expect(list.head.val).toBe("Hello");
       expect(list.head.next.val).toBe("Goodbye");
       expect(list.tail.val).toBe("last value");
-    })
+      expect(list.length).toBe(4);
+    });
 
   });
 
@@ -72,9 +68,32 @@ describe("Singly Linked List", () => {
       if many values only the last one removed
        */
 
-      test("Pop is a valid method", () => {
+    test("Pop is a valid method", () => {
       expect(typeof list.pop).toBe("function");
     });
+
+    test("Pop returns undefined if the list is empty", () => {
+      expect(list.pop()).toBe(undefined);
+    });
+
+    test("If popping off the only element, head and tail are null", () => {
+      list.push("Pop Me!")
+      expect(list.pop().val).toBe("Pop Me!");
+      expect(list.head).toBe(null);
+      expect(list.tail).toBe(null);
+      expect(list.length).toBe(0);
+    });
+
+    test("Pop works for longer lists", () => {
+      list.push("Hello")
+      list.push("Goodbye")
+      list.push("Pop Me!")
+      expect(list.pop().val).toBe("Pop Me!");
+      expect(list.head.val).toBe("Hello");
+      expect(list.tail.val).toBe("Goodbye");
+      expect(list.length).toBe(2);
+    });
+
   });
 });
 
