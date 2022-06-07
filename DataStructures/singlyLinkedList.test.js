@@ -254,13 +254,46 @@ describe("Singly Linked List", () => {
   });
 
   describe("Insert Method", () => {
-    /* What we want to test for set:
-      Insert a new node (with value at the passed in index, then return true
+    /* What we want to test for insert:
+      Insert a new node (with value at the passed in index), then return true
       if index provided is not valid, returns false
     */
 
-      test("Insert is a valid method", () => {
+    test("Insert is a valid method", () => {
       expect(typeof list.insert).toBe("function");
+    });
+
+    test("Insert returns false if the index provided is not valid", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.insert(5, "Too Long")).toBe(false);
+      expect(list.insert(-2, "Too Short")).toBe(false);
+    });
+
+    test("Insert returns true if the value at the index provided is changed", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+
+      expect(list.insert(0, "First")).toBe(true);
+      expect(list.length).toBe(3);
+      expect(list.insert(1, "Second")).toBe(true);
+      expect(list.length).toBe(4);
+    });
+
+    test("Insert adds a node at the provided valid index", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.insert(0, "First")).toBe(true);
+      expect(list.get(1).val).toBe('Hello');
+      expect(list.length).toBe(5);
+      expect(list.insert(2, "Two")).toBe(true);
+      expect(list.get(2).val).toBe('Two');
     });
 
   });
