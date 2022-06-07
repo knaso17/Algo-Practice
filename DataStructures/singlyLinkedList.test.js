@@ -253,6 +253,18 @@ describe("Singly Linked List", () => {
 
   });
 
+  describe("Insert Method", () => {
+    /* What we want to test for set:
+      Insert a new node (with value at the passed in index, then return true
+      if index provided is not valid, returns false
+    */
+
+      test("Insert is a valid method", () => {
+      expect(typeof list.insert).toBe("function");
+    });
+
+  });
+
 });
 
 
