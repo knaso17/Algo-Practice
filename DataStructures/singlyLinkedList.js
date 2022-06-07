@@ -90,4 +90,4 @@ class SinglyLinkedList{
 
 }
 
-module.exports = {Node, SinglyLinkedList}
+module.exports = { SinglyLinkedList }

@@ -217,10 +217,39 @@ describe("Singly Linked List", () => {
       change value at passed in index, then return true
       if index provided is not valid, returns false
     */
-    test("Get is a valid method", () => {
-      expect(typeof list.get).toBe("function");
+    test("Set is a valid method", () => {
+      expect(typeof list.set).toBe("function");
     });
 
+    test("Set returns false if the index provided is not valid", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.set(5, "Too Long")).toBe(false);
+      expect(list.set(-2, "Too Short")).toBe(false);
+    });
+
+    test("Set returns true if the value at the index provided is changed", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+
+      expect(list.set(0, "First")).toBe(true);
+      expect(list.set(1, "Second")).toBe(true);
+    });
+
+    test("Set changes the value at the provided valid index", () => {
+      list.push("Hello");
+      list.push("Goodbye");
+      list.push(99);
+      list.push("last value");
+
+      expect(list.set(0, "First")).toBe(true);
+      expect(list.get(0).val).toBe('First');
+      expect(list.set(2, "Two")).toBe(true);
+      expect(list.get(2).val).toBe('Two');
+    });
 
   });
 
