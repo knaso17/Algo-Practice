@@ -88,6 +88,18 @@ class SinglyLinkedList{
     return false;
   }
 
+  insert(idx, value){
+    //if index is less than zero or greater than length return false;
+    //if index is the same as length, push node at end
+    //if index is zero, unshift a new node at the start
+
+    //if valid index, create new node
+    //get index -1 and set next to be new node
+    //set the next property on the new node to be the previous next
+    //increment the length
+    //return true
+  }
+
 }
 
 module.exports = { SinglyLinkedList }
