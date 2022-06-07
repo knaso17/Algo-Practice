@@ -1,4 +1,4 @@
-const { Node, SinglyLinkedList } = require("./SinglyLinkedList");
+const { SinglyLinkedList } = require("./SinglyLinkedList");
 
 describe("Singly Linked List", () => {
   let list;
@@ -212,7 +212,18 @@ describe("Singly Linked List", () => {
     });
   });
 
-  //Todo: SET
+  describe("Set Method", () => {
+    /* What we want to test for set:
+      change value at passed in index, then return true
+      if index provided is not valid, returns false
+    */
+    test("Get is a valid method", () => {
+      expect(typeof list.get).toBe("function");
+    });
+
+
+  });
+
 });
 
 
